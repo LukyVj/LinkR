@@ -1,0 +1,137 @@
+/*================================
+  DON'T CARE ABOUT THE LINES BELOW
+  THEY ARE ONLY THE PAGE STYLE, SO
+  IT WILL WORK EVEN IF YOU REMOVE
+  THEM.
+  ================================*/
+
+.page{
+margin-bottom:4em;
+}
+/* Lines below are a modification of the EasUI basic CSS*/
+.bit-1.big{
+width:60% !important;
+margin:auto 20%;
+}
+.bit-1 code{
+margin:0 !important;
+padding:0;
+}
+.bit-1 p{
+width:60%;
+display:block;
+margin:auto;
+}
+.bit-1 p span{
+display:inline-block;
+margin:.1em;
+}
+.bit-1.big.sa{
+margin-top:1em;
+}
+code{
+line-height:1.6;
+}
+a{
+  color:#3498db;}
+/**/
+
+
+
+.center{
+text-align:center;
+}
+footer{
+text-align:center;
+}
+.warning{
+background:#e74c3c;
+display:block;
+width:100%;
+color:#fff;
+padding:2em;
+height:100%;
+margin:1em auto;
+}
+.infos{
+background:#3498db;
+display:block;
+width:100%;
+height:100%;
+color:#fff !important;
+padding:2em;
+margin:1em auto;
+}
+span a{
+color:#fff;
+display:block;
+width:1em;
+float:right;
+margin:-1.4em;
+text-decoration:none;
+border:0;
+text-align:center;
+/*border-radius*/
+-webkit-border-radius:100%;
+   -moz-border-radius:100%;
+        border-radius:100%;
+line-height:1;
+}
+footer{
+display:block;
+float:left;
+width:100%;
+text-align:center;
+font-size:.8em;
+background:#333;
+color:#fff;
+padding:.4em;
+position:fixed;
+bottom:-2em;
+/*transition*/
+-webkit-transition:bottom .2s ease;
+   -moz-transition:bottom .2s ease;
+     -o-transition:bottom .2s ease;
+        transition:bottom .2s ease;
+/*transform*/
+-webkit-transform:translateZ(0);
+   -moz-transform:translateZ(0);
+    -ms-transform:translateZ(0);
+     -o-transform:translateZ(0);
+        transform:translateZ(0);
+}
+footer.hi{
+bottom:0;
+/*transition*/
+-webkit-transition:bottom .2s ease;
+   -moz-transition:bottom .2s ease;
+     -o-transition:bottom .2s ease;
+        transition:bottom .2s ease;
+}
+
+
+
+
+
+
+
+/*================================
+  JUST CARE ABOUT THE LINES BELOW
+  ================================*/
+
+/* This is the class added to the links to make them look like real links*/
+.fakeLink{
+color:#3498db;
+border-bottom:1px dotted #3498db;
+cursor:pointer;
+/*Of course you can create your own, here is a different style.
+  
+  color:#e7*/
+/*Of course you can create your own, here is a different style.
+  
+  color:#e74c3c;
+border:1px solid #e74c3c;
+cursor:crosshair;
+padding:.1em;
+:*/;
+}

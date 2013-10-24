@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="http://interwebstars.github.io/EASUI/versions/1/1.4/easui-1.4.early.css">
+<div class="bit-1 page">
+  <h1 class="title title--black  center">Linkr.js</h1>
+  <div class="bit-1 big">
+  
+<span class="modal infos">
+  <a href="#"><span class="entypo-cancel"></span></a>
+  Basically, the paragraph below contains only alphanumeric charachters. But, with a little intervention from Jquery, you can turn any word / expressions that contains a domain (here .com) into a link </span>
+  </div>
+<div class="bit-1 big sa">  
+ <h2 class="title title--blue">Example : </h2>
+  </div>
+<p class="">Asymmetrical you-can.com irony scenester fanny pack PBR, vinyl retro Pinterest swag mixtape squid seitan chambray messenger bag photo booth. Freegan Williamsburg Tumblr, High Life hella add-any.com Austin McSweeney's slow-carb lo-fi vinyl seitan. Tofu ethical flexitarian, adress-you-want.com sartorial readymade Vice hella Portland letterpress aesthetic Terry Richardson narwhal. Gastropub single-origin coffee 3 wolf moon, Terry it-will-be.com Richardson cray PBR&B sartorial. Flexitarian aesthetic retro, art party recognized.com chambray Marfa VHS Neutra before they sold out Bushwick paleo synth shabby chic. Four loko forage Banksy deep v VHS readymade. Aesthetic selvage Shoreditch, ethical as-a-link.com beard biodiesel stumptown photo booth.</p>
+
+
+<div class="bit-1 big sa">  
+ <h3 class="title title--blue">Here its ineteresting because the content is editable : </h3>
+ <span class="title title--red">But there is still a bug.</span>
+  </div>
+<p class="" contenteditable>Asymmetrical you-can.com irony scenester fanny pack PBR, vinyl retro Pinterest swag mixtape squid seitan chambray messenger bag photo booth. Freegan Williamsburg Tumblr, High Life hella add-any.com Austin McSweeney's slow-carb lo-fi vinyl seitan. Tofu ethical flexitarian, adress-you-want.com sartorial readymade Vice hella Portland letterpress aesthetic Terry Richardson narwhal. Gastropub single-origin coffee 3 wolf moon, Terry it-will-be.com Richardson cray PBR&B sartorial. Flexitarian aesthetic retro, art party recognized.com chambray Marfa VHS Neutra before they sold out Bushwick paleo synth shabby chic. Four loko forage Banksy deep v VHS readymade. Aesthetic selvage Shoreditch, ethical as-a-link.com beard biodiesel stumptown photo booth.</p>
+ </div>
+<footer> 
+  2013 <a href="http://lucasbonomi.com">@LukyVj</a> | <span class="entypo-attention"></span> Dirty Js <span class="entypo-attention"></span> | Made with <a href="http://interwebstars.github.io/EASUI/">EasUI</a>
+</footer>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+
+        <script>
+           /* Add links auto to a paragraph with Jquery.
+   2013 @LukyVj | Big thanks to @dervondenbergen who helped me with the it[0].innerText.
+
+ I will use it on my own website, maybe a better version,
+ But I need a way to target and turn to links, any website url 
+ on a random text. */
+
+$(document).ready(function(){
+//Target and split each words.   
+var words = $("p").text().split(" ");
+$("p").empty();
+$.each(words, function(i, v) {
+    //Wrap them (the words) in a <span></span>
+    $("p").append($("<span>").text(v));
+});
+	setInterval(function(){
+
+//Then Target eahc span that contains .com (Note that you can make it work with any domain
+var expression = $('span:contains(.com)');
+  //Useless, you can remove the line below
+  //expression.css({color:'#3498db',borderBottom:'1px dotted #3498db',cursor:'pointer'}); 
+  expression.addClass('fakeLink');
+  //On click on the span that contains a .com domain, get the inner text.
+  expression.on('click',function(){
+     var it = $(this),
+         url = it[0].innerText;    
+    //And open a new window with this link as url
+    window.open('http://'+ url +'');  
+  });
+  },50);
+
+});
+
+
+//Ignore lines below, used for page style
+$("span.modal a").on("click",function(){$(this).parent().remove()});$(window).scroll(function(e){e.preventDefault();if($(window).scrollTop()+window.innerHeight==$(document).height()){$("footer").addClass("hi")}else{$("footer").removeClass("hi")}})
+        </script>
+    </body>
+</html>
