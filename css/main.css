@@ -1,10 +1,10 @@
- /*================================
+/*================================
   DON'T CARE ABOUT THE LINES BELOW
   THEY ARE ONLY THE PAGE STYLE, SO
   IT WILL WORK EVEN IF YOU REMOVE
   THEM.
   ================================*/
-
+body{background:#4099FF;color:#fff;}
 .page{
 margin-bottom:4em;
 }
@@ -33,7 +33,7 @@ code{
 line-height:1.6;
 }
 a{
-  color:#3498db;}
+  color:#ecf0f1;}
 /**/
 
 
@@ -54,7 +54,7 @@ height:100%;
 margin:1em auto;
 }
 .infos{
-background:#3498db;
+background:#2c3e50;
 display:block;
 width:100%;
 height:100%;
@@ -76,6 +76,7 @@ text-align:center;
    -moz-border-radius:100%;
         border-radius:100%;
 line-height:1;
+  border:0;
 }
 footer{
 display:block;
@@ -109,8 +110,9 @@ bottom:0;
         transition:bottom .2s ease;
 }
 
+.title.title--blue{color:#4099FF}
 
-
+h4{text-align:center;}
 
 
 
@@ -121,8 +123,8 @@ bottom:0;
 
 /* This is the class added to the links to make them look like real links*/
 .fakeLink{
-color:#3498db;
-border-bottom:1px dotted #3498db;
+color:#2c3e50;
+border-bottom:1px dotted #2c3e50;
 cursor:pointer;
 /*Of course you can create your own, here is a different style.
   

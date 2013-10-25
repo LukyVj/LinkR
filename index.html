@@ -9,36 +9,39 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+        <link rel="stylesheet" type="text/css" href="http://interwebstars.github.io/EASUI/versions/1/1.4/easui-1.4.early.css">
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <link rel="stylesheet" type="text/css" href="http://interwebstars.github.io/EASUI/versions/1/1.4/easui-1.4.early.css">
 <div class="bit-1 page">
-  <h1 class="title title--black  center">Linkr.js</h1>
+  <h1 class="title  center">Twittr.js</h1>
+  <h4 class="title title--white"><a href="http://codepen.io/LukyVj/pen/sLxzh">Based on LinkR</a></h4>
   <div class="bit-1 big">
-  
+    <div class="bit-2">
+    <span class="modal warning">
+         <a href="#"><span class="entypo-cancel"></span></a>
+Note that codepen block the new window open because the request was made in a sandboxed frame whose 'allow-popups' permission is not set. 
+    
+    Just look at your console and see the Twitter url. </span> 
+    </div>
+    <div class="bit-2">
 <span class="modal infos">
   <a href="#"><span class="entypo-cancel"></span></a>
-  Basically, the paragraph below contains only alphanumeric charachters. But, with a little intervention from Jquery, you can turn any word / expressions that contains a domain (here .com) into a link </span>
+  Basically, the paragraph below contains only alphanumeric charachters. But, with a little intervention from Jquery, you can turn any pseudo / names  that contains an arobaze at the begginging (@) into a Twitter link. </span>
+    </div>
   </div>
 <div class="bit-1 big sa">  
  <h2 class="title title--blue">Example : </h2>
   </div>
-<p class="">Asymmetrical you-can.com irony scenester fanny pack PBR, vinyl retro Pinterest swag mixtape squid seitan chambray messenger bag photo booth. Freegan Williamsburg Tumblr, High Life hella add-any.com Austin McSweeney's slow-carb lo-fi vinyl seitan. Tofu ethical flexitarian, adress-you-want.com sartorial readymade Vice hella Portland letterpress aesthetic Terry Richardson narwhal. Gastropub single-origin coffee 3 wolf moon, Terry it-will-be.com Richardson cray PBR&B sartorial. Flexitarian aesthetic retro, art party recognized.com chambray Marfa VHS Neutra before they sold out Bushwick paleo synth shabby chic. Four loko forage Banksy deep v VHS readymade. Aesthetic selvage Shoreditch, ethical as-a-link.com beard biodiesel stumptown photo booth.</p>
-
-
-<div class="bit-1 big sa">  
- <h3 class="title title--blue">Here its ineteresting because the content is editable : </h3>
- <span class="title title--red">But there is still a bug.</span>
-  </div>
-<p class="" contenteditable>Asymmetrical you-can.com irony scenester fanny pack PBR, vinyl retro Pinterest swag mixtape squid seitan chambray messenger bag photo booth. Freegan Williamsburg Tumblr, High Life hella add-any.com Austin McSweeney's slow-carb lo-fi vinyl seitan. Tofu ethical flexitarian, adress-you-want.com sartorial readymade Vice hella Portland letterpress aesthetic Terry Richardson narwhal. Gastropub single-origin coffee 3 wolf moon, Terry it-will-be.com Richardson cray PBR&B sartorial. Flexitarian aesthetic retro, art party recognized.com chambray Marfa VHS Neutra before they sold out Bushwick paleo synth shabby chic. Four loko forage Banksy deep v VHS readymade. Aesthetic selvage Shoreditch, ethical as-a-link.com beard biodiesel stumptown photo booth.</p>
+<p class="">Asymmetrical @kmandalwala you-can.com irony scenester fanny pack PBR, vinyl retro Pinterest swag mixtape @reimersJan squid seitan chambray messenger bag photo booth. Freegan Williamsburg 
+@shvelo96 Tumblr, High Life hella add-any.com Austin McSweeney's slow-carb lo-fi vinyl seitan. @DarbyBrown
+ Tofu ethical flexitarian, @lukyvj adress-you-want.com sartorial readymade Vice hella Portland letterpress aesthetic Terry Richardson narwhal. Gastropub single-origin coffee @DerVonDenBergen 3 wolf moon, Terry it-will-be.com Richardson cray PBR&B sartorial. Flexitarian aesthetic retro, art party @_kevinatari recognized.com chambray Marfa VHS Neutra before they sold out Bushwick paleo synth shabby chic. Four loko forage Banksy deep v VHS @MyXoToD readymade. Aesthetic @timPietrusky selvage Shoreditch, ethical as-a-link.com beard biodiesel stumptown photo booth.</p>
  </div>
 <footer> 
-  2013 <a href="http://lucasbonomi.com">@LukyVj</a> | <span class="entypo-attention"></span> Dirty Js <span class="entypo-attention"></span> | Made with <a href="http://interwebstars.github.io/EASUI/">EasUI</a>
+  2013 <a href="http://lucasbonomi.com">@LukyVj</a> |  <a href="http://bullg.it/Dirty/"><span class="entypo-attention"></span> Dirty Js <span class="entypo-attention"></span></a> | Made with <a href="http://interwebstars.github.io/EASUI/">EasUI</a>
 </footer>
 
 
@@ -48,7 +51,7 @@
         <script src="js/main.js"></script>
 
         <script>
-           /* Add links auto to a paragraph with Jquery.
+ /* Add links auto to a paragraph with Jquery.
    2013 @LukyVj | Big thanks to @dervondenbergen who helped me with the it[0].innerText.
 
  I will use it on my own website, maybe a better version,
@@ -63,22 +66,19 @@ $.each(words, function(i, v) {
     //Wrap them (the words) in a <span></span>
     $("p").append($("<span>").text(v));
 });
-	setInterval(function(){
-
 //Then Target eahc span that contains .com (Note that you can make it work with any domain
-var expression = $('span:contains(.com)');
+var expression = $('span:contains(@)');
   //Useless, you can remove the line below
   //expression.css({color:'#3498db',borderBottom:'1px dotted #3498db',cursor:'pointer'}); 
   expression.addClass('fakeLink');
   //On click on the span that contains a .com domain, get the inner text.
   expression.on('click',function(){
      var it = $(this),
-         url = it[0].innerText;    
+         name = it[0].innerText,
+         pseudo = name.replace('@','');
     //And open a new window with this link as url
-    window.open('http://'+ url +'');  
+    window.open('http://twitter.com/'+ pseudo +'');  
   });
-  },50);
-
 });
 
 
